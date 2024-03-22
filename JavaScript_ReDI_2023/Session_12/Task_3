@@ -1,0 +1,31 @@
+
+    </script>
+</body>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <div id="price"> </div>
+  <input type = "number" id = "amountChoco" min = "0" value ="0" oninput="amountChanged()">
+  <input type="number" id="amount" min="0" value="0" oninput="amountChanged()">
+  <script>
+    let price=2;
+    let priceChololate= 3; 
+
+   function amountChanged() {
+    let numberOfChoco = document.getElementById("amountChoco").value;
+     let number =document.getElementById("amount").value;
+     let totalPrice=(number * price) + (numberOfChoco * priceChololate);
+     document.getElementById("price").textContent=totalPrice;
+     if(totalPrice > 20){
+        totalPrice = totalPrice * 0.9;
+     }
+        document.getElementById("price").textContent = totalPrice
+   }
+    
+
+    </script>
+</body>

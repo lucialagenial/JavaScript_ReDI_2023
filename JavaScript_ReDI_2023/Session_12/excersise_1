@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+  <div id="myDiv"></div>  
+  <input id="name" />
+
+  <button onclick="submit()">Submit</button>
+
+    
+  <script>
+    /*/
+    */
+  
+    function submit(){
+      let inputElem = document.getElementById("name");
+      let value = inputElem.value; 
+      let myDiv = document.getElementById("myDiv");
+      myDiv.textContent = "hello " + value; 
+    }
+
+    </script>
+</body>

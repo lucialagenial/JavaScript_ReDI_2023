@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+ 
+
+  
+  <script>
+  let numElements = 6; 
+  //let myDiv= document.createElement("div");
+  for (let i = 0; i < numElements; i++) {
+    let myDiv= document.createElement("div");
+    myDiv.id = "Element"+i;
+    myDiv.textContent = "Element " + i; 
+    document.body.appendChild(myDiv);
+  }
+
+
+  </script>
+</body>

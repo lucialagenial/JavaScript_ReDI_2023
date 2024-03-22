@@ -1,0 +1,53 @@
+</script>
+</body>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <div id="operand1Div"> Operand 1 </div>
+  <input type ="number" id = "operand1">
+  <div id="operand2Div" > Operand 2 </div>
+  <input type="number" id="operand2">
+  <div id="myDropdown"> Operator</div>
+    <select id="operator">
+      <option value="addition">+</option>
+      <option value="substraction">-</option>
+      <option value="multi">*</option>
+    </select>
+    <button onclick="calculator()">Calculate</button>
+  <div id="result">Result: </div>
+  <div id="finalResult">Result</div>
+
+ 
+  
+  
+  <script>
+
+   function calculator() {
+    let operand1 = document.getElementById("operand1").valueAsNumber;
+    let operand2 = document.getElementById("operand2").valueAsNumber;
+    let operator = document.getElementById("operator").value;
+    let result;
+    
+    if (operator == 'addition') {
+    result = operand1 + operand2;
+      }
+    else if (operator == 'substraction') {
+    result = operand1 - operand2;
+      }
+    else if (operator == 'multi'){
+    result = operand1 * operand2;
+      }
+
+    // display the result
+    console.log(`${operand1} ${operator} ${operand2} = ${result}`);
+    let finalResult = document.getElementById("finalResult").textContent = result; 
+   }
+    
+   calculator()
+
+    </script>
+</body>

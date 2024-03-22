@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+  
+  
+  <script>
+  async function main() {
+    let response = await fetch('https://restcountries.com/v3.1/name/ethiopia'); 
+    let data = await response.json(); 
+    data = data[0];
+    console.log(data);
+    let name = data.name.official
+    console.log(name);
+    let area = data.area;
+    console.log(area);
+    let population = data.population; 
+    console.log(population)
+    let capital = data.capital;
+    console.log(capital)
+
+    let flag = data.flags.svg; 
+    console.log(flag)
+    let coatOfArms = data.coatOfArms.svg;
+    console.log(coatOfArms)
+    
+
+
+    let nameDiv = document.createElement("div"); 
+    nameDiv.textContent = name
+    document.body.appendChild(nameDiv)
+
+    let areaDiv = document.createElement("div"); 
+    areaDiv.textContent = area
+    document.body.appendChild(areaDiv)
+
+    let populationDiv =  document.createElement("div");
+    populationDiv.textContent = population
+
+    document.body.appendChild(populationDiv)
+
+    let capitalDiv = document.createElement("div");
+    capitalDiv.textContent = capital
+
+    document.body.appendChild(capitalDiv)
+
+    let flagImg = document.createElement('img'); 
+    flagImg.src = flag
+
+    document.body.appendChild(flagImg)
+
+    let coatOfArmsImg = document.createElement('img'); 
+    coatOfArmsImg.src = coatOfArms
+
+    document.body.appendChild(coatOfArmsImg)
+    
+  }
+
+  main()
+
+
+  </script>
+</body>
+</html>

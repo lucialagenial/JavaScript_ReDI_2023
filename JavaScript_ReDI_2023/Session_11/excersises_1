@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+  <script>
+  // SESSION 11: 24.10.23
+  /* Recap last session: For & while loops
+  */
+
+  //Methods inside OBJECTS:
+
+  /*
+  let me = {
+    name: 'Lucia',
+    favoriteFood: 'Tacos', 
+    hairColor: 'Dark Brown',
+    eyeColor: 'Brown',
+    age: 32,
+    address: {
+      country: 'Germany',
+      city: 'Berlin',
+    function:introducePerson(){
+      console.log("Hi my name is: " + this.name + " and my favorite food is " + this.favoriteFood)
+    }
+    
+
+  console.log(me)
+
+  
+  function introduce(me){
+    //let name = me.name; 
+    //let favoriteFood = me.favoriteFood; 
+    console.log("Hi my name is: " + me.name + " and my favorite food is " + me.favoriteFood)
+  }
+
+  introducePerson(me)
+  */
+  let car = {
+    company: 'Chevrolet',
+    model: 'Chevy',
+    describe: function(){
+      console.log("I drive a "+ this.company + " " + this.model)
+    }
+    
+  };
+  car.describe();
+
+  // HTML & JavaScript 
+  /* HTML defines the structure of your page. Follows a tree structure. JavaScript enables the 
+  interactivity with the webpage. 
+  
+
+  
+  </script>
+</body>
+
+</html>

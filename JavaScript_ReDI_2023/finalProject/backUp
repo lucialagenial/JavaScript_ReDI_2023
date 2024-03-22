@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+<div id="Days"> Map the Airbnb's locations in Berlin</div>
+<div id="map" style="height: 400px;"></div>
+<button onclick="addMarkersToMap()">Map</button>
+<div id="resultMap">Result: </div>
+
+
+  <script src= "https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src= "./jQuery.csv.js" ></script>
+  <script src= "./berlinData.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="scriptPrincipal.js"></script>
+  <script src="coordinates.js"
+
+
+  <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: "YOUR_API_KEY_HERE",
+      // Add other bootstrap parameters as needed, using camel case.
+      // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+    });
+  </script>
+  <script>
+    let csvData = $.csv.toObjects(window.csv);
+    console.log(csvData)
+
+    let coordinatesArray = csvData.map(function (row) {
+              // La penúltima columna es la longitud (longitud), y la última es la latitud
+              return [parseFloat(row[row.length - 2]), parseFloat(row[row.length - 1])];
+            });
+
+    console.log(coordinatesArray)
+    /* 
+    let coordinatesArray = berlinData.js
+    // Initialize and add the map
+    document.addEventListener("DOMContentLoaded", function() {
+    let map = L.map('map').setView([52.5200, 13.4050], 13);
+      // With this server I get an error: From origin 'null' has been blocked by CORS policy: Cross origin  request
+      // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
+      // Use a local tile server or another provider that supports HTTPS
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    }
+    /* 
+    let coordinatesArray = berlinData.js 
+
+    
+    function addMarkersToMap(map, coordinatesArray){
+      for (let i= 0; i < coordinatesArray.length; i++){
+        let coordinate = coordinatesArray[i];
+        let marker = L.marker(coordinate).addTo(map);
+        marker.binPopup("<b>Marker " + (i+1) +  "</b><br> Third attempt sample popup.").openPopup();
+
+      }
+    }
+    */ 
+
+  /*
+  // Función para agregar marcadores al mapa
+    function addMarkersToMap(map, coordinatesArray){
+      for (let i = 0; i < coordinatesArray.length; i++) {
+        let marker = L.marker(coordinatesArray[i]).addTo(map);
+        marker.bindPopup("Marcador " + (i + 1));
+      }
+    } 
+
+  // Load berlinData.js
+    try{
+      // Import the array window from berlinData.js
+      import('./berlinData.js')
+        .then(module => {
+          // Check if window is an array
+          if (Array.isArray(module.window)) {
+            // Map berlinData to get just the columns of longitud and latitud
+            let coordinatesArray = module.window.map(function (row) {
+              // La penúltima columna es la longitud (longitud), y la última es la latitud
+              return [parseFloat(row[row.length - 2]), parseFloat(row[row.length - 1])];
+            });
+
+            // Add markers with the coordinates
+            addMarkersToMap(map, coordinatesArray);
+          } else {
+            throw new Error('berlinData no es un array en berlinData.js');
+          }
+        })
+        .catch(error => {
+          throw new Error('Error al importar berlinData.js:', error);
+        });
+    } catch (error) {
+      console.error(error.message);
+    }
+
+  });
+*/
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+///////
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+<div id="Days"> Map the Airbnb's locations in Berlin</div>
+<div id="map" style="height: 400px;"></div>
+<button onclick="addMarkersToMap(map, coordinates)">Map</button>
+
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="scriptPrincipal.js"></script>
+  <script src="coordinates.js"></script>
+
+  
+
+
+
+  <script>   
+    
+    // Initialize and add the map
+
+    let map = L.map('map').setView([52.5200, 13.4050], 13);
+      // With this server I get an error: From origin 'null' has been blocked by CORS policy: Cross origin  request
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+
+    
+    function addMarkersToMap(map, coordinatesArray){
+      for (let i= 0; i < coordinatesArray.length; i++){
+        let coordinate = coordinatesArray[i];
+        let marker = L.marker([coordinate.lat, coordinate.lng]).addTo(map);
+        marker.bindPopup("<b>ID number:" + (i+1) +  " | Room Type: " + coordinate.room_type + " | Person capacity: "
+           + coordinate.person_capacity + " | Total of bedrooms: " + coordinate.bedrooms + " | Super host: " + coordinate.host_is_superhost).openPopup();
+
+      }
+    }
+
+    // room_type, person_capacity, bedrooms
+    //addMarkersToMap(map, coordinates)
+ 
+  </script>
+</body>
+</html>
