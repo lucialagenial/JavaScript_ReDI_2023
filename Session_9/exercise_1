@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+  <script>
+  // SESSION 9: 17.10.23
+  /* Recap last session
+  */
+  let books = ['Harry Potter', 'The Hobbit', 'Game of Thrones']
+
+  console.log(books[0]);
+  console.log(books[1]);
+  console.log(books[books.length-1]);
+  // Loops: cake recipe 
+  // While loop
+  // x++ please increase the value by one 
+  // also works with x-- 
+  //let cupsOfFlour = 0; // initialization
+  //while(cupsOfFlour  < 5){ // activation 
+  //  cupsOfFlour++; // update 
+  //  console.log('There are now '+ cupsOfFlour + ' cups of of flour in the bowl');
+  //}
+
+  /*
+  let isHungry = false; // we just ate
+  while (isHungry) {
+    eat(); // this is never reached!
+    break
+  } 
+  */
+
+  //let bitesOfChocolate = 0;
+  //while (bitesOfChocolate < 10) {
+  //  console.log('Bites of chocolate: ' + bitesOfChocolate);
+  //  console.log('Still hungry.');
+  //}
+  // this code will print "Bites of chocolate: 0" and
+  //"Still hungry" until your laptop runs out of battery,
+  // you close the browser, you reboot or the universe ends
+
+  /*let number = 1; 
+
+  while(number <= 5){
+    number++;
+    console.log(number);
+  }
+
+
+   // Task: 
+
+  */
+   let x = 0; 
+   name = 'Lucia';
+   while( x < 5){
+    x++;
+    console.log(name)
+    }
+  // Task 1: 
+    for (let i = 0; i < 11; i++){
+      console.log(i);
+    }
+
+  // Task 2: Use a for loop and output the numbers between 13 and 17 (including both) to the console
+    for( let i = 13; i < 18; i++){
+      console.log(i);
+    }
+  
+  // For loops and arryas 
+  let languages = ['english', 'spanisch', 'german', 'arabic', 'russian']
+  
+  for(let i = 0; i < languages.length; i++){
+    console.log(languages[i])
+  }
+
+  // Task 1: 
+  // Use a for loop to output: hello name! for every one of your friends.
+  
+  let friends = ['Harald', 'Sevtap', 'Akram', 'Abdo', 'Meli']
+
+  for(let i= 0; i < friends.length; i++){
+    console.log("Hello " + friends[i] + "!")
+  }
+
+  // Task 2: use a for loop and output the numbers between 5 and -3 (includign both) to the console
+  for(let i = 5; i > -4; i--){
+    console.log(i)
+  }
+
+  // Bonus tasks: 
+  // Output the sum of the first 10 numbers (e.g. 1 + 2 + 3 )
+  let arr = [];
+  let sum = 0;
+  let result = 0;
+  for(let i = 0; i < 11;i++){
+    arr.push(i); 
+    let sum = arr.reduce(function(a, b){
+      return a + b;
+    });
+    //sum = arr[i];
+    console.log("The sum is : " + sum)
+  
+  }
+
+  // Bonus task 2: 
+  // Output a countdown from 10 to o
+  let num = [];
+  for(i= 10; i > -1; i--){
+    num.push(i)
+    console.log(i)
+  }
+
+  // Bonus 2: Instead of 0 it should say: "liftoff"
+  for(i= 10; i > -1; i--){
+    if( i=== 0 ){
+      i = 'liftoff'
+    }
+    console.log(i)
+  }
+
+  // Bonus 3: Write the output to a html page
+  arr = []
+  for(i= 10; i > -1; i--){
+    if(i===0){
+      i = 'liftoff' 
+    }
+    arr.push(i);
+    //document.body.textContent = i 
+    document.body.textContent = "Counter: " + arr
+  }
+
+  
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+
+
+
+</script>
+</body>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <div id="operand1Div"> Operand 1 </div>
+  <input type ="number" id = "operand1">
+  <div id="operand2Div" > Operand 2 </div>
+  <input type="number" id="operand2">
+  <div class="dropdown-menu" id="myDropdown"> Operator jj</div>
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Operator
+    </a>
+      <a href="plus" > + </a>
+      <a href="minus" > - </a>
+  
+  
+  <script>
+
+   function calculator() {
+    let operand1 = document.getElementById("operand1").value;
+    let div1 = document.getElementById("operand1Div");
+    let operand2 =document.getElementById("operand2").value;
+    let div2 = document.getElementById("operand2Div");
+    let operator = document.getElementById("myDropdown").classList.toggle("show");
+
+
+     //document.textContent = operand2; 
+   }
+    
+
+    </script>
+</body>
+
+<button class="dropdown-content">Operator</button> 

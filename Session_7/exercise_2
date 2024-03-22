@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+<!-- Task 2 -->
+<button id="clicks" onclick="countClicks()">Click here!</button>
+    <script>
+    // SESSION 6: 
+    /* Task 2.1
+    create a webpage with one button. When you click the button, it should count how many times you clicked it and log that number to the console.
+    */
+    let count = 0;
+    function countClicks(){
+        count = count + 1
+        console.log("Total of clicks: " + count)
+    }
+    
+
+
+  </script>
+</body>
+
+</html>
